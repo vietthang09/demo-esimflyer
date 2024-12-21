@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#qr-code-input {
+    padding: 10px;
+}
+
+#upload-button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#upload-button:hover {
+    background-color: #3e8e41;
+}
+
+#qr-code-content {
+    margin-top: 20px;
+}
