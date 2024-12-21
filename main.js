@@ -62,9 +62,9 @@ uploadButton.addEventListener("click", async () => {
       fetch(
         `https://script.google.com/macros/s/AKfycbwb7WdnI9sYjDcIrVpp6aX8vThaiHEXTUH80QebiIFo-U9jyqyU5SheuBRHe1qc2Gpr4A/exec?driverID=${
           qrCodeText.value
-        }&action=create&qrCode=${
+        }&action=create&qrCode=${encodeURIComponent(
           newQRCodeResponse.url
-        }&redirectLink=${encodeURIComponent(redirectURL)}`,
+        )}&redirectLink=${encodeURIComponent(redirectURL)}`,
         requestOptions
       )
         .then((response) => response.text())
