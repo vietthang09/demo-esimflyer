@@ -44,7 +44,7 @@ uploadButton.addEventListener("click", async () => {
       const qrCodeString = data[0].symbol[0].data;
 
       // Generate redirect URL
-      const redirectURL = `http://127.0.0.1:5500/?content=${encodeURIComponent(
+      const redirectURL = `https://vietthang09.github.io/demo-esimflyer?content=${encodeURIComponent(
         qrCodeString
       )}&id=${qrCodeText.value}`;
 
