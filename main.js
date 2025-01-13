@@ -22,9 +22,8 @@ if (id && content) {
     requestOptions
   )
     .then((response) => response.text())
-    .then((res) => {
-      console.log(res);
-      // window.location.href = content;
+    .then(() => {
+      window.location.href = content;
     })
     .catch((error) => console.error(error));
 }
