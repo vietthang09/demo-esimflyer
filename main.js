@@ -23,6 +23,7 @@ if (id && content) {
   )
     .then((response) => response.text())
     .then(() => {
+      console.log(id, content);
       window.location.href = content;
     })
     .catch((error) => console.error(error));
