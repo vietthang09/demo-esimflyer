@@ -1,3 +1,4 @@
+const container = document.getElementById("container");
 const qrCodeInput = document.getElementById("qr-code-input");
 const qrCodeText = document.getElementById("qr-code-text");
 const qrCodeLink = document.getElementById("qr-code-link");
@@ -11,18 +12,18 @@ const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 const content = urlParams.get("content");
 if (id && content) {
+  container.style.display = "none"
   const requestOptions = {
     method: "GET",
     redirect: "follow",
   };
-  window.location.href = content; // Temp
   fetch(
     `https://script.google.com/macros/s/AKfycbypUIBzzXZR_kUtyM64i9XeD26AuMUBmOBeGI52AmFw5M00ZGyvqBLgdZPsKiB7iFrHzg/exec?driverID=${id}&action=add`,
     requestOptions
   )
-    .then((response) => response.text())
-    .then(() => {
-      // Should count here
+  .then((response) => response.text())
+  .then(() => {
+      window.location.href = content; 
     })
     .catch((error) => console.error(error));
 }
