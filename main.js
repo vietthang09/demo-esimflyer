@@ -12,7 +12,7 @@ const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 const content = urlParams.get("content");
 if (id && content) {
-  container.style.display = "none"
+  container.style.display = "none";
   const requestOptions = {
     method: "GET",
     redirect: "follow",
@@ -21,9 +21,10 @@ if (id && content) {
     `https://script.google.com/macros/s/AKfycbypUIBzzXZR_kUtyM64i9XeD26AuMUBmOBeGI52AmFw5M00ZGyvqBLgdZPsKiB7iFrHzg/exec?driverID=${id}&action=add`,
     requestOptions
   )
-  .then((response) => response.text())
-  .then(() => {
-      window.location.href = content; 
+    .then((response) => response.text())
+    .then((res) => {
+      console.log(res);
+      // window.location.href = content;
     })
     .catch((error) => console.error(error));
 }
